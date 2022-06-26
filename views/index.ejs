@@ -194,7 +194,7 @@
                         <!-- Tab panes -->
                         <div class="tab-content">
                             <div class="tab-pane active" id="Login">
-                                <form method="POST" action="/courses/<%= projects[i].name %>?_method=PUT" class="form-horizontal">
+                                <form method="POST" action="/projects/<%= projects[i].id %>?_method=PUT" class="form-horizontal">
                                     <div class="form-group">
                                         <div class="col-sm-12">
                                             <input type="text" name="name" class="form-control" value="<%= projects[i].name %> " >
@@ -213,7 +213,7 @@
                                             <button type="submit" class="btn btn-light btn-radius btn-brd grd1">
                                                 Submit
                                             </button>
-                                            <button type="submit" class="btn btn-light btn-radius btn-brd grd1"
+                                            <button  class="btn btn-light btn-radius btn-brd grd1"
                                                 data-dismiss="modal" aria-hidden="true">
                                                 Cancel
                                             </button>
