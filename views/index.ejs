@@ -152,27 +152,27 @@
           </h3>
         </div>
         <div class="row">
-        <% for( let i = 0; i < projects.length; i++ ) { %>
-            
-          <div class="col-lg-4 col-sm-6 mb-4">
-         
-           
+          <% for( let i = 0; i < projects.length; i++ ) { %>
 
+          <div class="col-lg-4 col-sm-6 mb-4">
             <div class="portfolio-item">
-            
-                <div class="portfolio-hover">
-                  
-                </div>
-                <a href="/projects/<%= projects[i].id %>?_method=DELETE "
-                  ><button class="btn-close"></button
-                ></a>
-                <a href="#" class="btn" data-bs-toggle="modal" data-bs-target="#project<%= projects[i].id %> ">
+              <div class="portfolio-hover"></div>
+              <a href="/projects/<%= projects[i].id %>?_method=DELETE "
+                ><button class="btn-close"></button
+              ></a>
+              <a
+                href="#"
+                class="btn"
+                data-bs-toggle="modal"
+                data-bs-target="#project<%= projects[i].id %> "
+              >
                 <img
                   class="img-fluid"
                   src="<%= projects[i].image %> "
                   alt="..."
                 />
-                asf</a>
+                asf</a
+              >
               <div class="portfolio-caption">
                 <div class="portfolio-caption-heading">
                   <%= projects[i].name %>
@@ -184,53 +184,90 @@
             </div>
           </div>
 
-
           <!-- TEST MODAL -->
 
-          <div class="modal fade" id="project<%= projects[i].id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-body customer-box">
-                        <!-- Tab panes -->
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="Login">
-                                <form method="POST" action="/projects/<%= projects[i].id %>?_method=PUT" class="form-horizontal">
-                                    <div class="form-group">
-                                        <div class="col-sm-12">
-                                            <input type="text" name="name" class="form-control" value="<%= projects[i].name %> " >
-                                        </div>
-                                    </div>
-                                  
-                                    <div class="form-group">
-                                        <div class="col-sm-12">
-                                            <textarea rows="8" name="description" class="form-control"
-                                            placeholder="Course Description" required><%= projects[i].description %> </textarea>
-                                        </div>
-                                    </div>
-                                
-                                    <div class="row">
-                                        <div class="col-sm-10">
-                                            <button type="submit" class="btn btn-light btn-radius btn-brd grd1">
-                                                Submit
-                                            </button>
-                                            <button  class="btn btn-light btn-radius btn-brd grd1"
-                                                data-dismiss="modal" aria-hidden="true">
-                                                Cancel
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
+          <div
+            class="modal fade"
+            id="project<%= projects[i].id %>"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="myModalLabel"
+          >
+            <div
+              class="modal-dialog modal-dialog-centered modal-lg"
+              role="document"
+            >
+              <div class="modal-content">
+                <div class="modal-body customer-box">
+                  <!-- Tab panes -->
+                  <div class="tab-content">
+                    <div class="tab-pane active" id="Login">
+                      <form
+                        method="POST"
+                        action="/projects/<%= projects[i].id %>?_method=PUT"
+                        class="form-horizontal"
+                      >
+                        <div class="form-group">
+                          <div class="col-sm-12">
+                            <input
+                              type="text"
+                              name="name"
+                              class="form-control"
+                              value="<%= projects[i].name %> "
+                            />
+                          </div>
                         </div>
+                        <div class="form-group">
+                          <div class="col-sm-12">
+                            <input
+                              type="text"
+                              name="image"
+                              class="form-control"
+                              value="<%= projects[i].image %>"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <div class="col-sm-12">
+                            <textarea
+                              rows="4"
+                              name="description"
+                              class="form-control"
+                              placeholder="Course Description"
+                              required
+                            >
+<%= projects[i].description %></textarea
+                            >
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-sm-10">
+                            <button
+                              type="submit"
+                              class="btn btn-light btn-radius btn-brd grd1"
+                            >
+                              Submit
+                            </button>
+                            <button
+                              class="btn btn-light btn-radius btn-brd grd1"
+                              data-dismiss="modal"
+                              aria-hidden="true"
+                            >
+                              Cancel
+                            </button>
+                          </div>
+                        </div>
+                      </form>
                     </div>
+                  </div>
                 </div>
+              </div>
             </div>
-        </div>
+          </div>
 
           <!-- TEST MODAL -->
-
-
-
 
           <div
             class="portfolio-modal modal fade"
@@ -293,11 +330,6 @@
           </div>
           <% } %>
         </div>
-
-
-
-
-
       </div>
     </section>
     <!-- About-->

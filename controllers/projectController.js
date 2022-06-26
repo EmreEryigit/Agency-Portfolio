@@ -18,3 +18,12 @@ exports.deleteProject = async(req,res) => {
         console.log(e);
     }
 }
+
+exports.updateProject = async (req,res) => {
+    try {
+        await Project.findByIdAndUpdate(req.params.id, req.body);
+        res.redirect("/")
+    } catch (e) {
+        console.log(e);
+    }
+}
